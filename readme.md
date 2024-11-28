@@ -31,13 +31,13 @@ Clone o repositório para o seu computador:
 git clone https://github.com/EXPOUNA/qrcode-fechadura-arduino.git
 ```
 
-Configure o ambiente virtual
+### 2. Configure o ambiente virtual
 
 ```bash
 python -m venv .venv
 ```
 
-Inicie o ambiente virtual
+### 3. Inicie o ambiente virtual
 
 Windows
 
@@ -49,6 +49,12 @@ Linux
 
 ```bash
 source .venv/bin/activate
+```
+
+### 4. Instale as dependências
+
+```bash
+pip install -r requirements.txt
 ```
 
 ## Configuração do projeto
