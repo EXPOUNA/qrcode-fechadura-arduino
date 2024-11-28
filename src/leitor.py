@@ -1,23 +1,20 @@
 import time
 import cv2
-import os
+
 
 from pyzbar import pyzbar
-from dotenv import load_dotenv
+
 
 from integracao_arduino import *
 from verificacao_qr import confirmar_usuario_qr
-from tratar_qr import parse_qr_code_data
+from tratar_qr import decodificar_json
 
-load_dotenv()
 
-QR_SECRET = os.getenv("QR_SECRET")
 
 
 def cam_decode(frame):
-    """
-    Processa o frame para detectar e decodificar códigos QR.
-    """
+    # Processa o frame para detectar e decodificar códigos QR.
+
     barcodes = pyzbar.decode(frame)
     for barcode in barcodes:
         x, y, w, h = barcode.rect
@@ -28,7 +25,7 @@ def cam_decode(frame):
     
     return frame, None 
 
-def camera():
+def camera(qr_secret):
     try:
         fechadura_aberta = False
         t_fechadura = 0
@@ -47,13 +44,13 @@ def camera():
                 last_qr = info
                 print(f"QR Code detectado: {info}")
                 
-                qr_data = parse_qr_code_data(info)
+                qr_data = decodificar_json(info)
 
                 if not qr_data:
                     print("Erro: QR Code inválido.")
                     continue
 
-                if qr_data.get("verify") != QR_SECRET:
+                if qr_data.get("verify") != qr_secret:
                     print("QR Code com verificação inválida.")
                     continue
                 

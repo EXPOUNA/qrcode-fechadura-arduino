@@ -1,6 +1,6 @@
 import json
 
-def parse_qr_code_data(data):
+def decodificar_json(data):
 
     try:
         return json.loads(data)
