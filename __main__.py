@@ -6,4 +6,4 @@ QR_SECRET = os.getenv("QR_SECRET")
 
 from src.leitor import camera
 
-camera()
+camera(QR_SECRET)

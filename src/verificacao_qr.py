@@ -1,4 +1,4 @@
-from conexao_supabase import pesquisar_usuario
+from .conexao_supabase import pesquisar_usuario
 
 def confirmar_usuario_qr(ra):
     usuario = pesquisar_usuario(ra)

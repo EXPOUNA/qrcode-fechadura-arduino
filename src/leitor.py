@@ -4,10 +4,9 @@ import cv2
 
 from pyzbar import pyzbar
 
-
-from integracao_arduino import *
-from verificacao_qr import confirmar_usuario_qr
-from tratar_qr import decodificar_json
+from .integracao_arduino import fechar_fechadura, abrir_fechadura
+from .verificacao_qr import confirmar_usuario_qr
+from .tratar_qr import decodificar_json
 
 
 

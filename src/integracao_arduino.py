@@ -1,7 +1,23 @@
 import pyfirmata2
+import os
+from dotenv import load_dotenv
 
-board = pyfirmata2.Arduino("COM3") # PORTA SERIAL 5 É ONDE O ARDUINO ESTÁ CONECTADO
-fechadura = board.get_pin('d:3:o') # PINO 3 É UTILIZADO PARA CONTROLE DA FECHADURA
+load_dotenv()
+
+
+porta_serial, pino_fechadura = os.getenv("PORTA_SERIAL"), os.getenv("PINO_FECHADURA")
+
+
+
+try:
+    # PORTA SERIAL (USB) ONDE O ARDUINO ESTÁ CONECTADO
+    board = pyfirmata2.Arduino("COM3")
+
+    # PINO ONDE SERÁ FEITO O CONTROLE DA FECHADURA
+    fechadura = board.get_pin('d:3:o') 
+except:
+    print("Não foi possível conectar ao Arduino")
+
 
 
 def abrir_fechadura():
