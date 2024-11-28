@@ -11,10 +11,10 @@ porta_serial, pino_fechadura = os.getenv("PORTA_SERIAL"), os.getenv("PINO_FECHAD
 
 try:
     # PORTA SERIAL (USB) ONDE O ARDUINO ESTÁ CONECTADO
-    board = pyfirmata2.Arduino("COM3")
+    board = pyfirmata2.Arduino(porta_serial)
 
     # PINO ONDE SERÁ FEITO O CONTROLE DA FECHADURA
-    fechadura = board.get_pin('d:3:o')
+    fechadura = board.get_pin(f'd:{pino_fechadura}:o')
 
     def abrir_fechadura():
         print("Fechadura aberta")
