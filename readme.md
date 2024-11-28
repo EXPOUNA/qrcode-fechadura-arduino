@@ -51,6 +51,22 @@ Linux
 source .venv/bin/activate
 ```
 
+## Configuração do projeto
+
+- Criar um arquivo .env seguindo o modelo .env.example
+- Preencher as credenciais do banco, chave secreta do qr code, porta serial e pino do arduino
+
 ## Inicializar o projeto
 
+```bash
 
+py .
+--------- OU ---------
+py __main__.py
+
+```
+
+## Sair do projeto
+
+-Pressione ESC dentro da janela da câmera
+-Pressione CTRL + V no terminal onde o programa está sendo executado
