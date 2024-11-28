@@ -74,5 +74,4 @@ py __main__.py
 
 ## Sair do projeto
 
--Pressione ESC dentro da janela da câmera
--Pressione CTRL + V no terminal onde o programa está sendo executado
+Pressione ESC dentro da janela da câmera ou pressione CTRL + C no terminal onde o programa está sendo executado.
