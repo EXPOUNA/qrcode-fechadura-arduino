@@ -61,7 +61,7 @@ source .venv/bin/activate
 ```bash
 py .
 ```
---------- OU ---------
+OU
 ```bash
 py __main__.py
 ```
