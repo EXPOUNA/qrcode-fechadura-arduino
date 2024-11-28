@@ -14,16 +14,23 @@ try:
     board = pyfirmata2.Arduino("COM3")
 
     # PINO ONDE SERÁ FEITO O CONTROLE DA FECHADURA
-    fechadura = board.get_pin('d:3:o') 
+    fechadura = board.get_pin('d:3:o')
+
+    def abrir_fechadura():
+        print("Fechadura aberta")
+        fechadura.write(1)
+
+    def fechar_fechadura():
+        print("Fechadura fechada")
+        fechadura.write(0)
 except:
     print("Não foi possível conectar ao Arduino")
 
+    def abrir_fechadura():
+        print("Fechadura aberta")
+    
+    def fechar_fechadura():
+        print("Fechadura fechada")
 
 
-def abrir_fechadura():
-    print("Fechadura aberta")
-    fechadura.write(1)
 
-def fechar_fechadura():
-    print("Fechadura fechada")
-    fechadura.write(0)
