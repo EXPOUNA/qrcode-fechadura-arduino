@@ -59,11 +59,11 @@ source .venv/bin/activate
 ## Inicializar o projeto
 
 ```bash
-
 py .
+```
 --------- OU ---------
+```bash
 py __main__.py
-
 ```
 
 ## Sair do projeto
