@@ -31,13 +31,13 @@ Clone o repositório para o seu computador:
 git clone https://github.com/EXPOUNA/qrcode-fechadura-arduino.git
 ```
 
-Configure o ambiente virtual
+### 2. Configure o ambiente virtual
 
 ```bash
 python -m venv .venv
 ```
 
-Inicie o ambiente virtual
+### 3. Inicie o ambiente virtual
 
 Windows
 
@@ -51,6 +51,27 @@ Linux
 source .venv/bin/activate
 ```
 
+### 4. Instale as dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+## Configuração do projeto
+
+- Criar um arquivo .env seguindo o modelo .env.example
+- Preencher as credenciais do banco, chave secreta do qr code, porta serial e pino do arduino
+
 ## Inicializar o projeto
 
+```bash
+py .
+```
+OU
+```bash
+py __main__.py
+```
 
+## Sair do projeto
+
+Pressione ESC dentro da janela da câmera ou pressione CTRL + C no terminal onde o programa está sendo executado.
