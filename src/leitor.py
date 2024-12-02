@@ -43,19 +43,13 @@ def camera(qr_secret):
                 last_qr = info
                 print(f"QR Code detectado: {info}")
                 
-                qr_data = decodificar_json(info)
+                print(info)
 
-                if not qr_data:
-                    print("Erro: QR Code inválido.")
-                    continue
-
-                if qr_data.get("verify") != qr_secret:
-                    print("QR Code com verificação inválida.")
-                    continue
-                
                 if not fechadura_aberta:
-                    usuario = confirmar_usuario_qr(qr_data.get("ra"))
+                    usuario = confirmar_usuario_qr(info)
+                    print(usuario)
                     if usuario:
+                        abrir_fechadura()
                         fechadura_aberta = True
                         t_fechadura = time.time()
 
